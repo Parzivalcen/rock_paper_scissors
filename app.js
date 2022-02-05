@@ -1,3 +1,28 @@
+// Make three buttons to play 
+// add an event listner to listener for our play function
+// get the right btn value, use "on click html attribute"
+// check is the btn has a value of r p or s
+
+const btns = document.querySelectorAll(".btn");
+
+// const paper = document.querySelector(".paper");
+// const scissors = document.querySelector(".scissors");
+
+function getText(ele){
+  let btnValue = ele.innerText;
+  let result = (play(cS = computerPlay(), uS = btnValue));
+  document.getElementById('winner').textContent = result
+  
+  return result;
+}
+
+
+
+
+
+
+
+
 // create a function that randomly return rock, paper of scissors
 // random method to retun rock paper scissors randomly.
 function computerPlay(){
@@ -19,7 +44,7 @@ function askUser(){
 // Play a round 
 // create a funtion play and call the functions
 function play(cS = computerPlay(), uS = askUser()){
- console.log(uS, cS)
+//  console.log(uS, cS)
  // if user input rock and computer paper, computer won
  if(uS == 'rock' && cS == 'paper' ){
 
