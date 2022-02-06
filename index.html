@@ -9,16 +9,20 @@
 <body style='background-color:rgb(161, 44, 9); max-width: 1200px; margin-inline: auto;';>
  <div class="home" style="display: flex; flex-direction:column; justify-items: center;">
   <h1 class="title" style=" margin-inline: auto;">Hi, this is a rock paper scissors console game</h1>
-  <p>Open the console</p>
+  <p>Your are going to play 5 rounds against the destroyer of worlds</p>
 
   <!-- BUTTONS -->
   <div class="play">
-   <button onclick="getText(this)" class="rock btn">rock </button>
-   <button onclick="getText(this)" class="paper btn">paper</button>
-   <button onclick="getText(this)" class="scissors btn" >scissors</button>
+   <button onclick="playOnClick(this)" class="rock btn">rock </button>
+   <button onclick="playOnClick(this)" class="paper btn">paper</button>
+   <button onclick="playOnClick(this)" class="scissors btn" >scissors</button>
   </div>
   <div class="results">
-   <p id="winner">I won</p>
+   <p id="winner">Press a button</p>
+   <p class="userSelection">You selected:</p>
+   <p class="computerSelection">Computer selected:</p>
+   <p class="scoreU">User Score:</p>
+   <p class="scoreC">Computer Score:</p>
   </div>
  </div>
 <script src="./app.js"></script>
