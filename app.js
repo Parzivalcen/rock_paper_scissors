@@ -123,7 +123,7 @@ function play(cS = computerPlay(), uS = askUser()) {
     // if none of the above use won
   } else {
     userScore++;
-    return "You won this round";
+    return "You won this round. Arrrggg!!!";
   }
   // return the if user won or lose
 }
