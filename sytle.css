@@ -192,3 +192,24 @@ footer p{
   margin-block: auto;
   color: white;
 }
+
+/* Winner Screen */
+.play-again{
+  max-width: 10rem;
+  background-color: black;
+  border-color: white;
+  color: white;
+  font-weight: bold;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 0.8rem;
+  margin-inline: auto;
+  margin-block: 2rem;
+}
+.play-again:hover{
+  background-color: rgb(32, 32, 32);
+  border-color: rgb(190, 190, 190);
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}

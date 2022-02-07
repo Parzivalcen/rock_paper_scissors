@@ -46,10 +46,10 @@ function checkWinner() {
     let winner = "";
     // Checks who wins
     if (computerScore > userScore) {
-      winner = "Computer won the Game";
+      winner = "I won, prepare to be destroyed by my algorithms";
       wButton = true;
     } else {
-      winner = "You won the Game, Congrats";
+      winner = "You won the Game, the World is Saved!!!";
       wButton = true;
     }
     // Display who wins.
@@ -61,22 +61,24 @@ function checkWinner() {
 
     buttons.appendChild(winnerDiv);
 
-    if(wButton){
-      console.log('someone won');
-      let btnPlayAgain = document.createElement("button");
-      let playAgainText = document.createTextNode('Play Again');
-      btnPlayAgain.appendChild(playAgainText);
-      winnerDiv.appendChild(btnPlayAgain);
-    }else{
-      console.log('no one won yet');
-    }
+    playAgain(wButton);
     return true
   }
 }
 
 // play again function. 
-function playAgain() {
-
+function playAgain(wButton) {
+  if(wButton){
+    console.log('someone won');
+    let btnPlayAgain = document.createElement("button");
+    btnPlayAgain.classList.add('play-again')
+    let playAgainText = document.createTextNode('Play Again');
+    btnPlayAgain.appendChild(playAgainText);
+    btnPlayAgain.addEventListener('click', _ => location.reload())
+    winnerDiv.appendChild(btnPlayAgain);
+  }else{
+    console.log('no one won yet');
+  }
 }
 
 // create a function that randomly return rock, paper of scissors
@@ -91,7 +93,7 @@ function computerPlay() {
 
 // Ask user to input rock, paper or scissors
 function askUser() {
-  let uPlay = prompt("enter rock paper or scicssors");
+  let uPlay = prompt("enter rock paper or scissors");
   //make all character lower case
   uPlay = uPlay.toLowerCase();
   return uPlay;
@@ -104,16 +106,16 @@ function play(cS = computerPlay(), uS = askUser()) {
   // if user input rock and computer paper, computer won
   if (uS == "rock" && cS == "paper") {
     computerScore++;
-    return "computer won this round";
+    return "I won this round, HAHAHA";
 
     // if user input scisors  and computer rock, computer won
   } else if (cS == "rock" && uS == "scissors") {
     computerScore++;
-    return "computer won  this round";
+    return "I won this round, HAHAHA";
     // if user input paper and computer scissor, computer won
   } else if (uS == "paper" && cS == "scissors") {
     computerScore++;
-    return "computer won this round";
+    return "I won this round, HAHAHA";
     // if both values match, is a tie
   } else if (uS == cS || cS == uS) {
     ties++;
