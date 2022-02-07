@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
+/* GLOBAL STYLES */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4 p,
+figure,
+picture {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  background-color: rgb(var(--clr-dark));
+  color: rgb(var(--clr-white));
+}
+a {
+  text-decoration: none;
+}
+
+/* imgs easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* remove animation for people who turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01sms !important;
+    scroll-behavior: auto !important;
+  }
+}
+p {
+  margin-top: 1rem;
+}
+/* =========
+utility clases 
+=========== */
+.hidden {
+  display: none;
+}
+.inline {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+.d-block {
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* Body */
+body {
+  background-color: black;
+  color: white;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* -------
+Buttons
+---------- */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.home .description {
+  margin-inline: auto;
+  font-size: 2rem;
+}
+
+.play {
+  display: flex;
+  gap: 4rem;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-image: url("./imgs/fist.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon {
+  width: 200px;
+}
+
+/* INFORMATION */
+.results {
+  display: flex;
+  flex-direction: column;
+}
+#winner {
+  margin-inline: auto;
+  margin-top: 2rem;
+  text-transform: capitalize;
+}
+
+.results div {
+  display: flex;
+  justify-content: space-between;
+  margin-inline-end: 1rem;
+}
+
+.gameInfo {
+  flex-direction: column;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  letter-spacing: 1.3px;
+}
