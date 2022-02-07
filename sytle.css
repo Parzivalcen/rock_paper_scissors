@@ -96,8 +96,8 @@ utility clases
 body {
   background-color: black;
   color: white;
-  max-width: 1200px;
   margin-inline: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,6 +111,10 @@ Buttons
   display: flex;
   flex-direction: column;
   justify-items: center;
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-block: auto;
+
 }
 .home .description {
   margin-inline: auto;
@@ -128,10 +132,24 @@ Buttons
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  background-image: url("./imgs/fist.png");
+  font-size: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.rock{
+  background-image: url("./imgs/cream-white-emoji-oncoming-fist-600w-1303092820.webp");
+}
+.paper{
+  background-image: url("./imgs/cream-white-emoji-raised-hand-600w-1303092814.webp");
+}
+.scissors{
+  background-image: url("./imgs/peace-victory-gesture-600w-1094001227.webp");
 }
 
 .icon {
@@ -160,4 +178,17 @@ Buttons
   text-transform: capitalize;
   font-size: 1.3rem;
   letter-spacing: 1.3px;
+}
+/* foorter */
+footer {
+  display: flex;
+  background: grey;
+  justify-content: center;
+  align-content: center;
+  padding-block: 1.5rem;
+
+}
+footer p{
+  margin-block: auto;
+  color: white;
 }

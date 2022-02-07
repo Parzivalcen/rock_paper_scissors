@@ -3,13 +3,16 @@
 // get the right btn value, use "on click html attribute"
 // get the btn text value
 // use as an argument in our play function
-// play 5 rounds.
+// First one to win 3 round wins the game
 
 const btns = document.querySelectorAll(".btn");
 let computerScore = 0;
 let userScore = 0;
 let ties = 0;
-let buttons = document.querySelector("body");
+let buttons = document.querySelector(".home");
+
+let winnerDiv = document.createElement("div");
+let winnerH1 = document.createElement("H1");
 // const scissors = document.querySelector(".scissors");
 
 // play if the button is clicked
@@ -31,9 +34,11 @@ function playOnClick(ele) {
   ).textContent = `Computer Score: ${computerScore}`; //get Computer Score
 
   checkWinner();
+  playAgain();
 }
 
 function checkWinner() {
+  let wButton = false;
   // The first one who wins THREE rounds wins the game
   if (computerScore === 3 || userScore === 3) {
     // Delete all the elements in  the body
@@ -42,19 +47,36 @@ function checkWinner() {
     // Checks who wins
     if (computerScore > userScore) {
       winner = "Computer won the Game";
+      wButton = true;
     } else {
       winner = "You won the Game, Congrats";
+      wButton = true;
     }
     // Display who wins.
-    let winnerDiv = document.createElement("div");
-    let winnerH1 = document.createElement("H1");
+
     let winnerText = document.createTextNode(winner);
     winnerH1.appendChild(winnerText);
     winnerDiv.appendChild(winnerH1);
     console.log(winnerText);
 
     buttons.appendChild(winnerDiv);
+
+    if(wButton){
+      console.log('someone won');
+      let btnPlayAgain = document.createElement("button");
+      let playAgainText = document.createTextNode('Play Again');
+      btnPlayAgain.appendChild(playAgainText);
+      winnerDiv.appendChild(btnPlayAgain);
+    }else{
+      console.log('no one won yet');
+    }
+    return true
   }
+}
+
+// play again function. 
+function playAgain() {
+
 }
 
 // create a function that randomly return rock, paper of scissors
